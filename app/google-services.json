@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "653339231951",
-    "firebase_url": "https://ibmlogin-ecf96.firebaseio.com",
-    "project_id": "ibmlogin-ecf96",
-    "storage_bucket": "ibmlogin-ecf96.appspot.com"
+    "project_number": "949274207242",
+    "firebase_url": "https://salondeniz-5bc03.firebaseio.com",
+    "project_id": "salondeniz-5bc03",
+    "storage_bucket": "salondeniz-5bc03.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:653339231951:android:8e38505f8c44c78b",
+        "mobilesdk_app_id": "1:949274207242:android:8e38505f8c44c78b",
         "android_client_info": {
           "package_name": "com.example.salondeniz"
         }
       },
       "oauth_client": [
         {
-          "client_id": "653339231951-rk13ddusv5rhv7g314n8uib5d1sii01c.apps.googleusercontent.com",
+          "client_id": "949274207242-v9mndnu1bhgggf1ns6v5dg0b8m5u4rs8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.salondeniz",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "653339231951-7400djhrf0j272gcadt9phrs2oc6rb01.apps.googleusercontent.com",
+          "client_id": "949274207242-tm8qh7tvlrra54virgjcpppl4qo8j7e3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDQn_6BYDE6IqozgkigmUcJHphE7Gj8X34"
+          "current_key": "AIzaSyBM-C0OgkRfTiH40RghtGXoF-C-mJXtyQk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "653339231951-7400djhrf0j272gcadt9phrs2oc6rb01.apps.googleusercontent.com",
+              "client_id": "949274207242-tm8qh7tvlrra54virgjcpppl4qo8j7e3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

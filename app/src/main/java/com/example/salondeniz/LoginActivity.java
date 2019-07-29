@@ -3,6 +3,7 @@ package com.example.salondeniz;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +20,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.UUID;
+
 public class LoginActivity extends AppCompatActivity {
 EditText edtTel,edtPass;
-Button btnLogin;
+Button btnLogin,btndrk;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -32,9 +36,23 @@ protected void onCreate(Bundle savedInstanceState) {
         @Override
         public void onClick(View view) {
             if (telVerifty()&&passwordVerifty()){
+
+                final DatabaseReference mRef= FirebaseDatabase.getInstance().getReference("Users");
+                User admin=new User("77777777777","", "Adminimiz","000000","Admin");
+                HashMap<String,Object> hashMap=new HashMap<>();
+                hashMap.put("Telefon",admin.getTelNo());
+                hashMap.put("Şifre",admin.getPassword());
+                hashMap.put("İsim",admin.getNameSurname());
+                hashMap.put("Rol",admin.getRole());
+                hashMap.put("UserId",admin.getUserID());
+
+                mRef.push().setValue(hashMap);
                 login();
             }
         }
+
+
+
     });
 
 
@@ -81,6 +99,7 @@ private void login(){
             if (User.uID=="" || User.uID=="0"){
                 edtTel.setText("");
                 Toast.makeText(LoginActivity.this,"Telefon Numarası veya Şifre Hatalı!",Toast.LENGTH_LONG).show();
+
 
             }
             reference.removeEventListener(this);

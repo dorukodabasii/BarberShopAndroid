@@ -2,6 +2,14 @@ package com.example.salondeniz.Model;
 
 public class User {
 
+    public User(String telNo, String userID, String nameSurname, String password, String role) {
+        this.telNo = telNo;
+        this.userID = userID;
+        this.nameSurname = nameSurname;
+        this.password = password;
+        this.role = role;
+    }
+
     private String telNo;
     private String userID;
     private String nameSurname;
