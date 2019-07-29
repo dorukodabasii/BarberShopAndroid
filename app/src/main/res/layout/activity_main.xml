@@ -37,12 +37,15 @@
         android:id="@+id/btnKullaniciEkle"
         android:layout_width="230dp"
         android:layout_height="67dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="492dp"
         android:text="Kullanıcı Ekle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnCaglarRand"

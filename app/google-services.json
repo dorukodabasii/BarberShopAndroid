@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "653339231951",
+    "firebase_url": "https://ibmlogin-ecf96.firebaseio.com",
+    "project_id": "ibmlogin-ecf96",
+    "storage_bucket": "ibmlogin-ecf96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653339231951:android:8e38505f8c44c78b",
+        "android_client_info": {
+          "package_name": "com.example.salondeniz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653339231951-rk13ddusv5rhv7g314n8uib5d1sii01c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.salondeniz",
+            "certificate_hash": "5f18e3a297bd29669d40e0c9c1f388fe205d8674"
+          }
+        },
+        {
+          "client_id": "653339231951-7400djhrf0j272gcadt9phrs2oc6rb01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQn_6BYDE6IqozgkigmUcJHphE7Gj8X34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653339231951-7400djhrf0j272gcadt9phrs2oc6rb01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
