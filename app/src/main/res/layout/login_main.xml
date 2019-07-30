@@ -51,7 +51,7 @@
         android:ems="10"
         android:hint="Şifreniz"
         android:inputType="textPassword"
-        android:maxLength="6"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

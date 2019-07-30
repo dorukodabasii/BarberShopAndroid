@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.455" />
 
     <EditText
-        android:id="@+id/edtEskiSifre3"
+        android:id="@+id/edtEskiSifre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.316" />
 
     <EditText
-        android:id="@+id/edtYeniSifre"
+        android:id="@+id/edtYeniSifre2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

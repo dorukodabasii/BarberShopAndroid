@@ -65,10 +65,9 @@ public class LoginActivity extends AppCompatActivity {
                     if ((person.getTelNo().equalsIgnoreCase(edtTel.getText().toString()) && (person.getPassword().equalsIgnoreCase(edtPass.getText().toString())))) {
                         User.uID = snapshot.getKey();
                         if (person.getRole().equalsIgnoreCase("Kullanıcı")) {
-                            Intent intent = new Intent(LoginActivity.this, LoginHomePage.class);
+                            Intent intent = new Intent(LoginActivity.this, LoginMenuMain.class);
                             startActivity(intent);
                             finish();
-                            break;
                         } else {
 
                             Intent ıntent = new Intent(LoginActivity.this, MainActivity.class);
