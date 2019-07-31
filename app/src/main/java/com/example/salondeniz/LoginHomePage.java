@@ -21,8 +21,7 @@ public class LoginHomePage extends AppCompatActivity {
         btnKullaniciEkle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ıntent=new Intent(LoginHomePage.this, UserAdd.class);
-                startActivity(ıntent);
+                startActivity(new Intent(LoginHomePage.this, UserAdd.class));
                 finish();
             }
         });

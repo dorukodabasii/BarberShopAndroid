@@ -23,16 +23,16 @@ public class MyProfile extends AppCompatActivity {
         btnPasswordChanged.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ıntent = new Intent(MyProfile.this,PasswordChange.class);
-                startActivity(ıntent);
+
+                startActivity(new Intent(MyProfile.this,PasswordChange.class));
                 finish();
             }
         });
         btnTelChanged.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ıntent1= new Intent(MyProfile.this,TelephoneChange.class);
-                startActivity(ıntent1);
+
+                startActivity(new Intent(MyProfile.this,TelephoneChange.class));
                 finish();
             }
         });

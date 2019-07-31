@@ -23,8 +23,7 @@ public class LoginMenuMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(LoginMenuMain.this, BarberChoose.class);
-                startActivity(intent);
+                startActivity(new Intent(LoginMenuMain.this, BarberChoose.class));
                 finish();
 
             }
@@ -33,20 +32,25 @@ public class LoginMenuMain extends AppCompatActivity {
         btnProfilim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ıntent = new Intent(LoginMenuMain.this,Contact.class);
-                startActivity(ıntent);
+                startActivity(new Intent(LoginMenuMain.this,Contact.class));
                 finish();
             }
         });
         btnProfilim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ıntent1=new Intent(LoginMenuMain.this,MyProfile.class);
-                startActivity(ıntent1);
+                startActivity(new Intent(LoginMenuMain.this,MyProfile.class));
                 finish();
             }
         });
 
+        btnIletisim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginMenuMain.this,Contact.class));
+                finish();
+            }
+        });
     }
 
     private void initialize() {

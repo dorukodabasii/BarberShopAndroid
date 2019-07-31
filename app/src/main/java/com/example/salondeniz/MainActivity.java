@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         btnKullanici.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ıntent = new Intent(MainActivity.this,UserAdd.class);
-                startActivity(ıntent);
+
+                startActivity(new Intent(MainActivity.this,UserAdd.class));
                 finish();
 
             }
