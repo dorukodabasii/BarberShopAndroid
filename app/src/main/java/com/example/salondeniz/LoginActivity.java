@@ -2,10 +2,12 @@ package com.example.salondeniz;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,8 +27,10 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText edtTel, edtPass;
-    Button btnLogin;
+    private EditText edtTel, edtPass;
+    private Button btnLogin;
+    private CheckBox chxRemember;
+
 
 
     @Override
@@ -65,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                     if ((person.getTelNo().equalsIgnoreCase(edtTel.getText().toString()) && (person.getPassword().equalsIgnoreCase(edtPass.getText().toString())))) {
                         User.uID = snapshot.getKey();
                         if (person.getRole().equalsIgnoreCase("Kullanıcı")) {
+
                             startActivity(new Intent(LoginActivity.this, LoginMenuMain.class));
                             finish();
                         } else {
@@ -97,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
         edtTel = findViewById(R.id.edtTelefonLog);
         edtPass = findViewById(R.id.edtPassLog);
         btnLogin = findViewById(R.id.btnLog);
-
+        chxRemember=findViewById(R.id.chxBenihtrla);
     }
 
     private boolean telVerifty() {

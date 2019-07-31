@@ -67,7 +67,7 @@ public class TelephoneChange extends AppCompatActivity {
                         Person person2 = snapshot.getValue(Person.class);
                         person2.setUserID(snapshot.getKey().toString());
                         if (person2.getUserID().equalsIgnoreCase(User.uID)) {
-                            if (person2.getPassword().equalsIgnoreCase(edtTelephone.getText().toString())) {
+                            if (person2.getTelNo().equalsIgnoreCase(edtTelephone.getText().toString())) {
                                 telephoneInfo = "1";
                                 break;
                             } else {
@@ -85,7 +85,7 @@ public class TelephoneChange extends AppCompatActivity {
                     if (telephoneInfo == "1") {
                         DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Users").child(User.uID);
                         final HashMap<String, Object> hashMap = new HashMap<>();
-                        hashMap.put("password", edtnewTelephone.getText().toString());
+                        hashMap.put("telNo", edtnewTelephone.getText().toString());
 
                         reference1.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
