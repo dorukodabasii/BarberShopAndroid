@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.salondeniz.Model.User;
+
 public class LoginHomePage extends AppCompatActivity {
 
     Button btnKullaniciEkle,btnKullaniciSil,btnVolkanRandevu,btnCaglarRandevu;
