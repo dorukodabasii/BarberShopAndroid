@@ -2,6 +2,7 @@ package com.example.salondeniz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,13 +21,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class UserAdd extends AppCompatActivity {
 
     EditText edtname,edttel,edtpass;
     Button btnuseradd;
     Person person= new Person();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,8 @@ public class UserAdd extends AppCompatActivity {
                     person.setTelNo(edttel.getText().toString());
                     person.setRole("Kullanıcı");
                     userControl();
+
+
 
                 }
 
@@ -90,6 +97,7 @@ public class UserAdd extends AppCompatActivity {
                     hashMap.put("password",person.getPassword());
                     hashMap.put("nameSurname",person.getNameSurname());
                     hashMap.put("role","Kullanıcı");
+
 
 
                     reference.push().setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {

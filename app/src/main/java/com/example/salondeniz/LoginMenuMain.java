@@ -24,7 +24,7 @@ public class LoginMenuMain extends AppCompatActivity {
             public void onClick(View view) {
 
                 startActivity(new Intent(LoginMenuMain.this, BarberChoose.class));
-                finish();
+
 
             }
         });
@@ -33,14 +33,14 @@ public class LoginMenuMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginMenuMain.this,Contact.class));
-                finish();
+
             }
         });
         btnProfilim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginMenuMain.this,MyProfile.class));
-                finish();
+
             }
         });
 
@@ -48,7 +48,7 @@ public class LoginMenuMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginMenuMain.this,Contact.class));
-                finish();
+
             }
         });
     }

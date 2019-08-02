@@ -21,8 +21,7 @@ import com.google.firebase.storage.UploadTask;
 
 public class MyProfile extends AppCompatActivity {
 
-    FirebaseStorage storage=FirebaseStorage.getInstance();
-    StorageReference storageReference = storage.getReference();
+
     Button btnTelChanged,btnPasswordChanged;
     ImageView imgProfilePhoto;
     @Override

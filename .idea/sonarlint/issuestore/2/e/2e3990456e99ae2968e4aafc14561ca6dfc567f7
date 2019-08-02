@@ -1,0 +1,13 @@
+
+Asquid:S1659"%Declare "edtPass" on a separate line.(ÉÀÃòùÿÿÿÿ
+asquid:UselessImportCheck">Remove this unused import 'android.content.SharedPreferences'.(íÎÉr
+Msquid:S2696+"6Make the enclosing method "static" or remove this set.(üùç
+hsquid:UselessImportCheck"?Remove this unused import 'androidx.appcompat.app.AlertDialog'.(¼Ìï¨üÿÿÿÿ
+bsquid:UselessImportCheck">Remove this unused import 'android.provider.ContactsContract'.(üç§±
+qsquid:S1450 "ZRemove the "chxRemember" field and declare it as a local variable in the relevant methods.(óšÅ÷
+squid:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
+Tsquid:UselessImportCheck"+Remove this unused import 'java.util.UUID'.(ÀãÄ£úÿÿÿÿ
+Fsquid:S1068 "/Remove this unused "chxRemember" private field.(óšÅ÷
+Rsquid:S2696F"6Make the enclosing method "static" or remove this set.(÷ÒŠ÷øÿÿÿÿ
+esquid:UselessImportCheck"<Remove this unused import 'android.content.DialogInterface'.(Š­›¨şÿÿÿÿ
+Wsquid:UselessImportCheck".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
