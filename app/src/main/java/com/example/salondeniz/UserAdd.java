@@ -1,8 +1,5 @@
 package com.example.salondeniz;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,14 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
+
 import java.util.HashMap;
-import java.util.List;
+
 
 public class UserAdd extends AppCompatActivity {
 
-    EditText edtname,edttel,edtpass;
+    EditText edtname,edttel;
     Button btnuseradd;
     Person person= new Person();
 
@@ -42,9 +39,8 @@ public class UserAdd extends AppCompatActivity {
         btnuseradd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(telVerify() && nameVerify() && passVerify()){
+                if(telVerify() && nameVerify() ){
                     person.setNameSurname(edtname.getText().toString());
-                    person.setPassword(edtpass.getText().toString());
                     person.setTelNo(edttel.getText().toString());
                     person.setRole("Kullanıcı");
                     userControl();
@@ -94,7 +90,7 @@ public class UserAdd extends AppCompatActivity {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
                     HashMap<String,Object> hashMap = new HashMap<>();
                     hashMap.put("telNo",person.getTelNo());
-                    hashMap.put("password",person.getPassword());
+                    hashMap.put("password","123456");
                     hashMap.put("nameSurname",person.getNameSurname());
                     hashMap.put("role","Kullanıcı");
 
@@ -119,7 +115,6 @@ public class UserAdd extends AppCompatActivity {
     private void initialize() {
 
         edtname=findViewById(R.id.edtname);
-        edtpass=findViewById(R.id.edtpass);
         edttel=findViewById(R.id.edtTel);
         btnuseradd=findViewById(R.id.btnKullaniciyiEkle);
 
@@ -138,16 +133,7 @@ public class UserAdd extends AppCompatActivity {
             return true;
         }
     }
-    private  boolean passVerify(){
-        String passInput= edtpass.getText().toString().trim();
-        if (passInput.isEmpty()){
-            edtpass.setError("Boş geçilemez!");
-            return false;
-        }else {
-            edtpass.setError(null);
-            return true;
-        }
-    }
+
     private boolean nameVerify(){
         String nameInput= edtname.getText().toString().trim();
         if (nameInput.isEmpty()){

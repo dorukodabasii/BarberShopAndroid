@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class BarberChoose extends AppCompatActivity {
     public static String randevu="";
-    private boolean checked = false;
     CheckBox chxVolkan, chxCaglar;
     Button dvmEt;
 
@@ -21,9 +20,8 @@ public class BarberChoose extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barber_choose_main);
-        chxVolkan = findViewById(R.id.chkVolkan);
-        chxCaglar = findViewById(R.id.chkCaglar);
-        dvmEt=findViewById(R.id.btnDevam);
+        initialize();
+
 
         chxVolkan.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -33,6 +31,7 @@ public class BarberChoose extends AppCompatActivity {
                     Toast.makeText(BarberChoose.this, "Volkan seçildi", Toast.LENGTH_LONG).show();
                     randevu = "Volkan";
                 } else if (!chxVolkan.isChecked()) {
+                    randevu="";
                     chxCaglar.setEnabled(true);
                 }
 
@@ -47,10 +46,13 @@ public class BarberChoose extends AppCompatActivity {
                     Toast.makeText(BarberChoose.this, "Çağlar seçildi", Toast.LENGTH_LONG).show();
                     randevu = "Çağlar";
                 } else if (!chxCaglar.isChecked()) {
+                    randevu="";
                     chxVolkan.setEnabled(true);
+
                 }
             }
         });
+
 
         dvmEt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +61,9 @@ public class BarberChoose extends AppCompatActivity {
                 if (randevu==""){
 
                     Toast.makeText(BarberChoose.this,"Berber Seçmeden devam edemezsiniz",Toast.LENGTH_LONG).show();
-                }else{
+
+                }else
+                    {
                     Intent ıntent= new Intent(BarberChoose.this,Services.class);
                     startActivity(ıntent);
                     finish();
@@ -70,6 +74,14 @@ public class BarberChoose extends AppCompatActivity {
 
 
 
+
+    }
+
+    private void initialize() {
+
+        chxVolkan = findViewById(R.id.chkVolkan);
+        chxCaglar = findViewById(R.id.chkCaglar);
+        dvmEt=findViewById(R.id.btnDevam);
 
     }
 }

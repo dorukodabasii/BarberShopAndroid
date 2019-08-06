@@ -17,17 +17,17 @@
         <activity android:name=".UserRemove"/>
         <activity android:name=".MyProfile" />
         <activity android:name=".Contact" />
-        <activity android:name=".Services" />
         <activity android:name=".BarberChoose" />
         <activity android:name=".TelephoneChange" />
         <activity android:name=".PasswordChange" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginMenuMain" />
+        <activity android:name=".Services"/>
         <activity android:name=".UserAdd" />
         <activity
             android:name=".Splash"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
