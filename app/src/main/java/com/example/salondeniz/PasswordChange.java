@@ -42,7 +42,6 @@ public class PasswordChange extends AppCompatActivity {
         Intent ıntent = getIntent();
         role = ıntent.getStringExtra("role");
 
-
         btndegis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,11 +55,7 @@ public class PasswordChange extends AppCompatActivity {
                 }
             }
         });
-
-
     }
-
-
     private void passwordControl() {
         PasswordInfo = "";
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -86,22 +81,22 @@ public class PasswordChange extends AppCompatActivity {
 
             private void passwordUpdate() {
 
-                if (PasswordInfo=="1"){
-                DatabaseReference reference1=FirebaseDatabase.getInstance().getReference("Users").child(User.uID);
-                final HashMap<String,Object> hashMap= new HashMap<>();
-                hashMap.put("password",edtyeniSifre.getText().toString());
+                if (PasswordInfo == "1") {
+                    DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Users").child(User.uID);
+                    final HashMap<String, Object> hashMap = new HashMap<>();
+                    hashMap.put("password", edtyeniSifre.getText().toString());
 
-                reference1.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        PasswordInfo="";
-                        Toast.makeText(PasswordChange.this,"Şifreniz Başarıyla Değiştirilmiştir!",Toast.LENGTH_LONG).show();
-                    }
-                });
+                    reference1.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            PasswordInfo = "";
+                            Toast.makeText(PasswordChange.this, "Şifreniz Başarıyla Değiştirilmiştir!", Toast.LENGTH_LONG).show();
+                        }
+                    });
 
 
-                }else{
-                    Toast.makeText(PasswordChange.this,"Şifreniz Hatalı...",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(PasswordChange.this, "Şifreniz Hatalı...", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -115,7 +110,6 @@ public class PasswordChange extends AppCompatActivity {
 
     }
 
-
     private void initialize() {
         edteskiSifre = findViewById(R.id.edtEskiSifre);
         edtyeniSifre = findViewById(R.id.edtYeniSifre);
@@ -123,41 +117,41 @@ public class PasswordChange extends AppCompatActivity {
         btndegis = findViewById(R.id.btnOnay);
 
     }
+
     private boolean passwordVerify() {
         String passwordInput = edteskiSifre.getText().toString().trim();
         if (passwordInput.isEmpty()) {
             edteskiSifre.setError("Boş Geçilemez!");
             return false;
-        }
-         else {
+        } else {
             edteskiSifre.setError(null);
             return true;
         }
     }
-    private  boolean newPasswordVerify(){
+
+    private boolean newPasswordVerify() {
 
         String newPasswordInput = edtyeniSifre.getText().toString().trim();
-        if (newPasswordInput.isEmpty()){
+        if (newPasswordInput.isEmpty()) {
             edtyeniSifre.setError("Boş Geçilemez!");
             return false;
-        }
-        else{
+        } else {
             edtyeniSifre.setError(null);
             return true;
         }
 
     }
 
-    private  boolean passwordAcceptVerify(){
+    private boolean passwordAcceptVerify() {
 
         String passwordInput = edtyeniSifre2.getText().toString().trim();
-        if (passwordInput.isEmpty()){
+        if (passwordInput.isEmpty()) {
             edtyeniSifre2.setError("Şifre Boş geçilemez");
             return false;
-        }else {
+        } else {
             edtyeniSifre2.setError(null);
             return true;
         }
 
-        }
+    }
 }

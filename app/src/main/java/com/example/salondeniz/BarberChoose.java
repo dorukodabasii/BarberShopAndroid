@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -12,7 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 public class BarberChoose extends AppCompatActivity {
-    public static String randevu="";
+    public static String randevu = "";
     CheckBox chxVolkan, chxCaglar;
     Button dvmEt;
 
@@ -31,7 +30,7 @@ public class BarberChoose extends AppCompatActivity {
                     Toast.makeText(BarberChoose.this, "Volkan seçildi", Toast.LENGTH_LONG).show();
                     randevu = "Volkan";
                 } else if (!chxVolkan.isChecked()) {
-                    randevu="";
+                    randevu = "";
                     chxCaglar.setEnabled(true);
                 }
 
@@ -46,42 +45,35 @@ public class BarberChoose extends AppCompatActivity {
                     Toast.makeText(BarberChoose.this, "Çağlar seçildi", Toast.LENGTH_LONG).show();
                     randevu = "Çağlar";
                 } else if (!chxCaglar.isChecked()) {
-                    randevu="";
+                    randevu = "";
                     chxVolkan.setEnabled(true);
 
                 }
             }
         });
 
-
         dvmEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (randevu==""){
+                if (randevu == "") {
 
-                    Toast.makeText(BarberChoose.this,"Berber Seçmeden devam edemezsiniz",Toast.LENGTH_LONG).show();
+                    Toast.makeText(BarberChoose.this, "Berber Seçmeden devam edemezsiniz", Toast.LENGTH_LONG).show();
 
-                }else
-                    {
-                    Intent ıntent= new Intent(BarberChoose.this,Services.class);
+                } else {
+                    Intent ıntent = new Intent(BarberChoose.this, Services.class);
                     startActivity(ıntent);
                     finish();
                 }
-
             }
         });
-
-
-
-
     }
 
     private void initialize() {
 
         chxVolkan = findViewById(R.id.chkVolkan);
         chxCaglar = findViewById(R.id.chkCaglar);
-        dvmEt=findViewById(R.id.btnDevam);
+        dvmEt = findViewById(R.id.btnDevam);
 
     }
 }

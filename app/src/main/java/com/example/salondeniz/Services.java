@@ -1,7 +1,6 @@
 package com.example.salondeniz;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +8,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class Services extends AppCompatActivity {
 
-   static ArrayList<String> mArrayList = new ArrayList<>();
-   static ArrayList<String> durations = new ArrayList<>();
+    static ArrayList<String> mArrayList = new ArrayList<>();
+    static ArrayList<String> durations = new ArrayList<>();
     Button btndevam;
 
 
@@ -37,9 +35,9 @@ public class Services extends AppCompatActivity {
 
                 if (mArrayList.isEmpty()) {
 
-                    Toast.makeText(Services.this,"Lütfen işlem Seçiniz",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Services.this, "Lütfen işlem Seçiniz", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
                     Toast.makeText(Services.this, mArrayList.toString(), Toast.LENGTH_LONG).show();
                     Toast.makeText(Services.this, durations.toString(), Toast.LENGTH_LONG).show();
                 }
@@ -48,14 +46,12 @@ public class Services extends AppCompatActivity {
         });
 
 
-
-
     }
 
     private void initialize() {
 
 
-        btndevam=findViewById(R.id.btnDevamServices);
+        btndevam = findViewById(R.id.btnDevamServices);
 
         ArrayList<Integer> integers = new ArrayList<>();
 
@@ -82,20 +78,19 @@ public class Services extends AppCompatActivity {
         integers.add(R.id.chxDus);
         integers.add(R.id.chxUzunCiltbkm);
 
-        for(Integer ınteger :integers)
-        {
+        for (Integer ınteger : integers) {
             final CheckBox checkBox = this.findViewById(ınteger);
 
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    String operation=checkBox.getText().toString();
-                    String duration=checkBox.getTag().toString();
+                    String operation = checkBox.getText().toString();
+                    String duration = checkBox.getTag().toString();
                     if (checkBox.isChecked()) {
                         Toast.makeText(Services.this, operation, Toast.LENGTH_SHORT).show();
                         mArrayList.add(operation);
                         durations.add(duration);
-                    }else if (!checkBox.isChecked()){
+                    } else if (!checkBox.isChecked()) {
                         mArrayList.remove(operation);
                         durations.remove(duration);
                     }
@@ -108,9 +103,9 @@ public class Services extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        BarberChoose.randevu="";
+        BarberChoose.randevu = "";
         mArrayList.clear();
         durations.clear();
-        startActivity(new Intent(Services.this,BarberChoose.class));
+        startActivity(new Intent(Services.this, BarberChoose.class));
     }
 }

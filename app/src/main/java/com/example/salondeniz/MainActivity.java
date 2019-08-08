@@ -1,7 +1,6 @@
 package com.example.salondeniz;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialize();
-
-
 
 
         btnKullaniciEkle.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
