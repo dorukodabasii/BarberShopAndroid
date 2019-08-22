@@ -38,8 +38,13 @@ public class Services extends AppCompatActivity {
                     Toast.makeText(Services.this, "Lütfen işlem Seçiniz", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    Toast.makeText(Services.this, mArrayList.toString(), Toast.LENGTH_LONG).show();
+                    /*Toast.makeText(Services.this, mArrayList.toString(), Toast.LENGTH_LONG).show();
                     Toast.makeText(Services.this, durations.toString(), Toast.LENGTH_LONG).show();
+                    */
+                    Intent appo = new Intent(Services.this,AppointmentMain.class);
+                    startActivity(appo);
+                    finish();
+
                 }
 
             }
@@ -103,9 +108,9 @@ public class Services extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        BarberChoose.randevu = "";
+
         mArrayList.clear();
         durations.clear();
-        startActivity(new Intent(Services.this, BarberChoose.class));
+
     }
 }

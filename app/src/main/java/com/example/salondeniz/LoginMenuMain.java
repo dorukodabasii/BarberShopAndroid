@@ -10,8 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginMenuMain extends AppCompatActivity {
-    Button btnRandevuAl, btnProfilim, btnRandevularim, btnIletisim, btnAdresimiz;
-    CheckBox rememberme;
+    Button btnRandevuAl, btnProfilim, btnRandevularim, btnIletisim, btnAdresimiz,btnCikis;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,12 +26,17 @@ public class LoginMenuMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(LoginMenuMain.this, BarberChoose.class));
+                startActivity(new Intent(LoginMenuMain.this,  Services.class));
 
 
             }
         });
-
+        btnRandevularim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginMenuMain.this,AppointmentPast.class));
+            }
+        });
 
         btnProfilim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,22 +60,28 @@ public class LoginMenuMain extends AppCompatActivity {
                 startActivity(new Intent(LoginMenuMain.this, MapsActivity.class));
             }
         });
-       /* rememberme.setOnClickListener(new View.OnClickListener() {
+        btnCikis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO
+                LoginActivity.login=false;
+                startActivity(new Intent(LoginMenuMain.this,LoginActivity.class));
             }
         });
-*/
+
+
+
+
+
+
     }
 
     private void initialize() {
         btnRandevuAl = findViewById(R.id.btnRandevuAl);
         btnProfilim = findViewById(R.id.btnProfil);
         btnRandevularim = findViewById(R.id.btnRandevularim);
-        btnIletisim = findViewById(R.id.btninfo);
+        btnIletisim = findViewById(R.id.btninfo2);
         btnAdresimiz = findViewById(R.id.btnAdres);
-        rememberme=findViewById(R.id.chxBenihtrla);
+        btnCikis=findViewById(R.id.btnCikis);
 
     }
 }

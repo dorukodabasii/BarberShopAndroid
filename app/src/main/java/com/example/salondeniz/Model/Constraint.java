@@ -5,6 +5,16 @@ public class Constraint {
     private String clockID;
     private String dateID;
 
+    public String getConstraintID() {
+        return constraintID;
+    }
+
+    public void setConstraintID(String constraintID) {
+        this.constraintID = constraintID;
+    }
+
+    private String constraintID;
+
     public String getBarberID() {
         return barberID;
     }

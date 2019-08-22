@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnKullaniciEkle, btnKullaniciSil, btnVolkanRandevu, btnCaglarRandevu;
+    Button btnKullaniciEkle, btnKullaniciSil, btnVolkanRandevu, btnCaglarRandevu,btnAdminCikis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,33 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        btnAdminCikis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LoginActivity.login=false;
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+
+            }
+        });
+        btnVolkanRandevu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ıntent = new Intent(getApplicationContext(),AppointmentPastBarber.class);
+                ıntent.putExtra("barberID","-Lmd_2LDQGGr05lxFnQe");
+                startActivity(ıntent);
+                finish();
+            }
+        });
+        btnCaglarRandevu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ıntent = new Intent(getApplicationContext(),AppointmentPastBarber.class);
+                ıntent.putExtra("barberID","-Lmd_-e75bG1OL9MSupO");
+                startActivity(ıntent);
+                finish();
+            }
+        });
 
 
     }
@@ -42,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         btnVolkanRandevu = findViewById(R.id.btnVolkanRand);
         btnCaglarRandevu = findViewById(R.id.btnCaglarRand);
         btnVolkanRandevu = findViewById(R.id.btnVolkanRand);
+        btnAdminCikis=findViewById(R.id.btnAdminCik);
 
     }
 }

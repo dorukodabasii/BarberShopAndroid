@@ -1,16 +1,19 @@
 package com.example.salondeniz.Model;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class Clock {
 
-    private String clockInformation;
+
+    private String date;
     private String clockID;
 
-    public String getclockInformation() {
-        return clockInformation;
+    public String getDate() {
+        return date;
     }
 
-    public void setclockInformation(String clockInformation) {
-        this.clockInformation = clockInformation;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getclockID() {

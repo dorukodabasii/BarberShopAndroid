@@ -1,15 +1,20 @@
 package com.example.salondeniz;
 
 
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.salondeniz.Model.Person;
 import com.example.salondeniz.Model.User;
 import com.google.firebase.database.DataSnapshot;
@@ -19,9 +24,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
+
+
 public class LoginActivity extends AppCompatActivity {
     private EditText edtTel, edtPass;
+    CheckBox chxRememberMe;
     private Button btnLogin;
+    public static boolean login=false;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
 
 
 
@@ -29,6 +41,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_main);
+        sharedPreferences = getSharedPreferences("loginref",MODE_PRIVATE );
+        editor=sharedPreferences.edit();
+
 
 
         User.uID = "0";
@@ -36,18 +51,22 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 if (telVerifty() && passwordVerifty()) {
 
                     login();
+
                 }
             }
-
-
         });
-
+        login=sharedPreferences.getBoolean("login",true);
+        if (login==true){
+            edtTel.setText(sharedPreferences.getString("tel",null));
+            edtPass.setText(sharedPreferences.getString("password",null));
+        }
     }
+
+
+
 
 
     private void login() {
@@ -63,11 +82,20 @@ public class LoginActivity extends AppCompatActivity {
                     if ((person.getTelNo().equalsIgnoreCase(edtTel.getText().toString()) && (person.getPassword().equalsIgnoreCase(edtPass.getText().toString())))) {
                         User.uID = snapshot.getKey();
                         if (person.getRole().equalsIgnoreCase("Kullanıcı")) {
-
-                            startActivity(new Intent(LoginActivity.this, LoginMenuMain.class));
-                            finish();
+                            if (chxRememberMe.isChecked()){
+                                editor.putBoolean("login",true);
+                                editor.putString("tel",edtTel.getText().toString());
+                                editor.putString("password",edtPass.getText().toString());
+                                editor.commit();
+                                login = true;
+                                startActivity(new Intent(LoginActivity.this, LoginMenuMain.class));
+                                finish();
+                            }else {
+                                login = true;
+                                startActivity(new Intent(LoginActivity.this, LoginMenuMain.class));
+                                finish();
+                            }
                         } else {
-
 
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
@@ -92,11 +120,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-
+        chxRememberMe = findViewById(R.id.chxBenihtrla);
         edtTel = findViewById(R.id.edtTelefonLog);
         edtPass = findViewById(R.id.edtPassLog);
         btnLogin = findViewById(R.id.btnLog);
     }
+
 
     private boolean telVerifty() {
         String telVerifty = edtTel.getText().toString().trim();

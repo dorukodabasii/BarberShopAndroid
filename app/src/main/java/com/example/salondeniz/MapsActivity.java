@@ -224,12 +224,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onKeyEntered(String key, GeoLocation location) {
-        sendNotification("EDMTDev", String.format("%s entered the my address", key));
+        sendNotification("EDMTDev", String.format("%s Salondenize hoşgeldin", key));
     }
 
     @Override
     public void onKeyExited(String key) {
-        sendNotification("EDMTDev", String.format("%s leaved the my address", key));
+        sendNotification("EDMTDev", String.format("%s Salondenizden ayrılıyorsun, Yeniden bekleriz", key));
     }
 
 

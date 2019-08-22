@@ -100,6 +100,9 @@ public class UserAdd extends AppCompatActivity {
 
                 }
             });
+
+
+
         } else {
             Toast.makeText(UserAdd.this, "Bu Telefon Numarası ile Kayıtlı Kullanıcı Mevcut!", Toast.LENGTH_SHORT).show();
         }
