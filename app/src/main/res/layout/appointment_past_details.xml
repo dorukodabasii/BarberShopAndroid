@@ -20,6 +20,7 @@
         android:layout_marginEnd="-1dp"
         android:layout_marginBottom="391dp"
         android:text="TextView"
+        android:gravity="center"
         android:textColor="#6097B1"
         android:textStyle="bold"
         android:textSize="20sp"
@@ -42,6 +43,7 @@
         android:layout_marginEnd="-2dp"
         android:layout_marginBottom="120dp"
         android:text="TextView"
+        android:gravity="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +65,7 @@
         android:layout_marginBottom="258dp"
         android:text="TextView"
         android:textSize="20sp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="145dp" />
@@ -82,6 +85,7 @@
         android:layout_marginEnd="-2dp"
         android:layout_marginBottom="329dp"
         android:text="TextView"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,4 +104,20 @@
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="484dp"
         app:srcCompat="@drawable/ab" />
+
+    <Button
+        android:id="@+id/btnRandevuSil"
+        android:layout_width="141dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_design"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="253dp"
+        android:layout_marginTop="526dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="26dp"
+        android:text="Randevu sil" />
+
 </RelativeLayout>

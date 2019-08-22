@@ -99,17 +99,17 @@
         app:layout_constraintVertical_bias="0.384" />
 
     <ImageView
-        android:id="@+id/imgProfil"
-        android:layout_width="142dp"
-        android:layout_height="135dp"
+        android:id="@+id/imageView11"
+        android:layout_width="152dp"
+        android:layout_height="160dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="237dp"
-        android:layout_marginBottom="404dp"
-        app:srcCompat="@drawable/salondeniz" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginBottom="377dp"
+        app:srcCompat="@drawable/user" />
 
 </RelativeLayout>

@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:gravity="center"
         android:textColor="#6097B1"
         android:textStyle="bold"
         android:textSize="24sp"

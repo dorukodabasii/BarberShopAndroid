@@ -201,6 +201,7 @@ public class AppointmentPast extends AppCompatActivity {
                                         ıntent.putExtra("clockInformation", clockInformation);
                                         ıntent.putExtra("date", appointmentsList.get(position).getDate());
                                         ıntent.putExtra("operation", Services.mArrayList);
+                                        ıntent.putExtra("userType", "User");
                                         startActivity(ıntent);
                                         finish();
 

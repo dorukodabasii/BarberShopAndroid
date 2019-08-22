@@ -85,7 +85,7 @@ public class MyProfile extends AppCompatActivity {
 
         btnPasswordChanged = findViewById(R.id.btnSifreDegis);
         btnTelChanged = findViewById(R.id.btnTelDegis);
-        imgProfilePhoto = findViewById(R.id.imgProfil);
+        imgProfilePhoto = findViewById(R.id.imageView11);
         txUserName = findViewById(R.id.txtKullaniciAd);
         txPhone = findViewById(R.id.txtKullaniciTel);
 

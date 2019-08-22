@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         initialize();
 
 
+
         btnKullaniciEkle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

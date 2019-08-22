@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.757" />
-
     <Button
         android:id="@+id/btnVolkanRand"
         android:layout_width="230dp"
@@ -77,4 +76,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.304" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
